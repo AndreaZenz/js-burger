@@ -16,19 +16,17 @@ submitBnt.addEventListener("click", function () {
     for (var i = 0; i < listaIngredienti.length; i++) {
         var ingrediente = listaIngredienti[i]
         somma = addToSum(somma, ingrediente);
-
-        var sconto = 0;
-        var coupon = document.getElementById("coupon")
-        
-        if (coupon.value == "BOOLEAN33") {
-            sconto = somma * 20 / 100;
-        } else if (coupon.value == "BOOLEAN") {
-            sconto = somma * 40 / 100;
-        } else {
-            sconto = 0
-        }
     }
-
+    var sconto = 0;
+    var coupon = document.getElementById("coupon")
+    
+    if (coupon.value == "BOOLEAN33") {
+        sconto = somma * 20 / 100;
+    } else if (coupon.value == "BOOLEAN") {
+        sconto = somma * 40 / 100;
+    } else {
+        sconto = 0
+    }
     console.log(sconto)
     document.getElementById("price").innerHTML = somma - sconto
 
